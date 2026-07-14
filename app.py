@@ -2,14 +2,13 @@ import streamlit as st
 import pandas as pd
 import os
 from datetime import datetime
-from dotenv import load_dotenv
 from groq import Groq
 import hashlib
 
-# 🔐 LOAD API
-load_dotenv()
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
+# 🔐 LOAD API
+os.getenv("GROQ_API_KEY")()
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 # 🎨 PAGE SETTINGS
 st.set_page_config(page_title="AI Marketing Pro", layout="wide")
 
